@@ -42,16 +42,31 @@
 
 }
 
-.usergreeting, .logout
+.userbarBtn
 {
     width:150px;
     height:40px;
-    border-radius: 10px;
     color:white;
     font-family: 'Open Sans', sans-serif;
     font-size: larger;
     text-align: center;
 }
+
+#logout 
+{
+    background-color: #0072CE;
+    padding: 12px 20px;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer;
+    width:100px;
+    color:white;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    top:5px;
+}
+
 
 .spacer 
 {
@@ -77,7 +92,7 @@ input[type=text], select, textarea
     resize:vertical;
 }
 
-input[type=submit] 
+input[type=button] 
 {
     background-color: #0072CE;
     padding: 12px 20px;
