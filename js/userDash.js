@@ -10,5 +10,5 @@ document.querySelector("#addBtn").addEventListener("click", function(ev)
 
 document.querySelector("#historyBtn").addEventListener("click", function(ev)
 {
-    location.href = "../ElancoFrontend/recHis.html";
+    location.href = "../ElancoFrontend/recHistory.html";
 })

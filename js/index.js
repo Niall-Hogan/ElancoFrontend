@@ -19,7 +19,6 @@ else
 
 document.querySelector("#regBtn").addEventListener("click", function(ev)
 {
-    console.log("WORKED");
     location.href = "../ElancoFrontend/register.html";
 })
 
