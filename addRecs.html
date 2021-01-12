@@ -27,15 +27,14 @@
         <div class = "loginCont">
 
 
+            <form class = "fileUpload">
+                <label for="imgPath">Enter Receipt Image Path...</label><br><br>
+                    <input type="file" onchange="previewFile()" id="imgPath" accept="image/*,.pdf" name="imgPath">
+                    <br><img src="" height="200" alt="Image preview" id = "imgPrev">
+                    <br><br>
+                <input type="button" value="Submit"><br>
+            </form><br>
       
-            <div class = "spacer"></div>
-            
-                <a><input type = "button" value = "Add Receipts" id = "addBtn"> </a>
-                <div class = "spacer"></div>
-
-                <a ><input type = "button" value = "View Reciept History" id ="historyBtn" > </a>
-                
-                </div>
                               
         </div>
 
@@ -43,7 +42,7 @@
 
     </div>
 
-    <script src = "js/userDash.js"> </script>
+    <script src = "js/filePreview.js"> </script>
 
 </body>
 </html>

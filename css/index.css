@@ -83,7 +83,6 @@
 /* Form styling */
 label 
 {
-    padding: 5px 5px 5px 0;
     display: inline-block;
     font-family: 'Open Sans', sans-serif;
     color:white;
@@ -116,4 +115,36 @@ input[type=button]
 
 input[type=button]:hover{
     background-color: rgb(0, 114, 206 ,0.8);
+}
+
+
+
+.fileUpload
+{
+    margin:auto;
+    text-align: center;
+}
+
+#imgPrev
+{
+    display:none;
+}
+
+table{
+	align-self: center;	
+	padding:20px;
+}
+th, td{
+	padding:10px 4px;
+    text-align:left;	
+    font-family: 'Open Sans', sans-serif;
+
+}	
+th{
+	text-transform:uppercase;
+	border-bottom:4px solid #000;	
+	background-color:#f8f8f8;	
+}
+tr:nth-child(odd){
+	background-color:rgb(190, 196, 214);	
 }

@@ -1,11 +1,14 @@
 document.querySelector("#logout").addEventListener("click", function(ev)
 {
-    console.log("WORKED");
     location.href = "../ElancoFrontend/index.html";
 })
 
 document.querySelector("#addBtn").addEventListener("click", function(ev)
 {
-    console.log("WORKED");
-    location.href = "../ElancoFrontend/addReceipts.html";
+    location.href = "../ElancoFrontend/addRecs.html";
+})
+
+document.querySelector("#historyBtn").addEventListener("click", function(ev)
+{
+    location.href = "../ElancoFrontend/recHis.html";
 })

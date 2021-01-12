@@ -3,6 +3,8 @@ function previewFile(){
     const file = document.querySelector('input[type=file]').files[0];
     const reader = new FileReader();
 
+    preview.style.display = "inline";
+
     reader.addEventListener("load", function(){
         //convert image file to base64 string
         preview.src = reader.result;
@@ -12,3 +14,8 @@ function previewFile(){
         reader.readAsDataURL(file);
     }
 }
+
+document.querySelector("#logout").addEventListener("click", function(ev)
+{
+    location.href = "../ElancoFrontend/index.html";
+})
