@@ -12,3 +12,4 @@ document.querySelector("#historyBtn").addEventListener("click", function(ev)
 {
     location.href = "../ElancoFrontend/recHistory.html";
 })
+

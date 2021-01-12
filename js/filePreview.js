@@ -19,3 +19,8 @@ document.querySelector("#logout").addEventListener("click", function(ev)
 {
     location.href = "../ElancoFrontend/index.html";
 })
+
+document.querySelector("#back").addEventListener("click", function(ev)
+{
+    location.href = "../ElancoFrontend/userDash.html";
+})
