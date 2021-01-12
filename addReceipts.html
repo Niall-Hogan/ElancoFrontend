@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\style.css">
+    <title>Add Receipt</title>
+</head>
+<body>
+    <div id="container">
+        <br>
+
+        <h1 >
+            <img src="Images/logo.png" alt="Elanco Logo" id="logo" >
+        </h1>
+
+        <br>
+
+        <form>
+            <label for="imgPath">Enter Receipt Image Path...</label><br><br>
+                <input type="file" onchange="previewFile()" id="imgPath" accept="image/*,.pdf" name="imgPath">
+                <br><img src="" height="200" alt="Image preview" id = "imgPrev">
+                <br><br>
+            <input type="submit" value="Submit"><br>
+        </form><br>
+    </div>
+
+    <script src = "js/filePreview.js"></script>
+</body>
+</html>

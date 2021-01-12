@@ -52,6 +52,12 @@
     text-align: center;
 }
 
+.userbarBtn p 
+{
+    position: relative;
+    top:-10px;
+}
+
 #logout 
 {
     background-color: #0072CE;
@@ -105,4 +111,9 @@ input[type=button]
     font-size: larger;
     font-weight: bolder;
     margin:auto;
+
 }   
+
+input[type=button]:hover{
+    background-color: rgb(0, 114, 206 ,0.8);
+}
