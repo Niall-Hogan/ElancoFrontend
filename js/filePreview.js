@@ -30,17 +30,17 @@ document.getElementById("fileForm").addEventListener("submit", e => {
     e.preventDefault();
 
     const endpoint = "../ElancoFrontend/upload.php";
-    const inpFile = document.getElementById("imgPath");
+    const inpFile = document.getElementById("inpFile");
     const formData = new FormData();
 
 
     formData.append("inpFile", inpFile.files[0]);
 
-    console.dir(inpFile.files);
 
     fetch(endpoint, {
         method:"post",
         body: formData
     }).catch(console.error);
 
+    console.dir(inpFile.files);
 });

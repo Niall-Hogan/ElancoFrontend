@@ -1,4 +1,4 @@
 <?php
 
-$targetPath = "/Images" . basename ($_FILES["imgPath"]["name"]);
-move_uploaded_file($_FILES["imgPath"]["tmp_name"], $targetPath);
+$targetPath = "../ElancoFrontend/Images/" . basename ($_FILES["inpFile"]["name"]);
+move_uploaded_file($_FILES["inpFile"]["tmp_name"], $targetPath);
