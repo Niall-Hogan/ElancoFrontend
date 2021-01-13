@@ -27,12 +27,12 @@
         <div class = "loginCont">
 
 
-            <form class = "fileUpload">
+            <form class = "fileUpload" id = "fileForm">
                 <label for="imgPath">Enter Receipt Image Path...</label><br><br>
                     <input type="file" onchange="previewFile()" id="imgPath" accept="image/*,.pdf" name="imgPath">
                     <br><img src="" height="200" alt="Image preview" id = "imgPrev">
                     <br><br>
-                <input type="button" value="Submit"><br><br>
+                <input type="submit" value="Submit"><br><br>
                 <input type="button" value="Back" id = "back"><br>
 
             </form><br>

@@ -24,3 +24,21 @@ document.querySelector("#back").addEventListener("click", function(ev)
 {
     location.href = "../ElancoFrontend/userDash.html";
 })
+
+
+document.getElementById("fileForm").addEventListener("submit", e => {
+    e.preventDefault();
+
+    const endpoint = "../ElancoFrontend/upload.php";
+    const inpFile = document.getElementById("imgPath");
+    const formData = new FormData();
+
+
+    formData.append("inpFile", inpFile.files[0]);
+
+    fetch(endpoint, {
+        method:"post",
+        body: formData
+    }).catch(console.error);
+
+});
