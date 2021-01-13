@@ -36,6 +36,8 @@ document.getElementById("fileForm").addEventListener("submit", e => {
 
     formData.append("inpFile", inpFile.files[0]);
 
+    console.dir(inpFile.files);
+
     fetch(endpoint, {
         method:"post",
         body: formData
