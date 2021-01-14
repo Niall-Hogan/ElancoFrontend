@@ -26,21 +26,21 @@ document.querySelector("#back").addEventListener("click", function(ev)
 })
 
 
-document.getElementById("fileForm").addEventListener("submit", e => {
-    e.preventDefault();
+// document.getElementById("fileForm").addEventListener("submit", e => {
+//     e.preventDefault();
 
-    const endpoint = "../upload.php";
-    const inpFile = document.getElementById("inpFile");
-    const formData = new FormData();
-
-
-    formData.append("inpFile", inpFile.files[0]);
+//     const endpoint = "../upload.php";
+//     const inpFile = document.getElementById("inpFile");
+//     const formData = new FormData();
 
 
-    fetch(endpoint, {
-        method:"post",
-        body: formData
-    }).catch(console.error);
+//     formData.append("inpFile", inpFile.files[0]);
 
-    console.dir(inpFile.files);
-});
+
+//     fetch(endpoint, {
+//         method:"post",
+//         body: formData
+//     }).catch(console.error);
+
+//     console.dir(inpFile.files);
+// });

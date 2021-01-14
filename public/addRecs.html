@@ -27,7 +27,7 @@
         <div class = "loginCont">
 
 
-            <form class = "fileUpload" id = "fileForm">
+            <form class = "fileUpload" method = "POST" enctype="multipart/form-data" action="/">
                 <label for="imgPath">Enter Receipt Image Path...</label><br><br>
                     <input type="file" onchange="previewFile()" id="inpFile" accept="image/*,.pdf" name="imgPath">
                     <br><img src="" height="200" alt="Image preview" id = "imgPrev">
