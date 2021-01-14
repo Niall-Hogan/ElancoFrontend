@@ -26,21 +26,8 @@ document.querySelector("#back").addEventListener("click", function(ev)
 })
 
 
-// document.getElementById("fileForm").addEventListener("submit", e => {
-//     e.preventDefault();
-
-//     const endpoint = "../upload.php";
-//     const inpFile = document.getElementById("inpFile");
-//     const formData = new FormData();
-
-
-//     formData.append("inpFile", inpFile.files[0]);
-
-
-//     fetch(endpoint, {
-//         method:"post",
-//         body: formData
-//     }).catch(console.error);
-
-//     console.dir(inpFile.files);
-// });
+document.querySelector("#subRec").addEventListener("click", function(ev)
+{
+    console.log("WORKS");
+    location.href = "../userDash.html";
+})
