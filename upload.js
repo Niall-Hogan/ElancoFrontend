@@ -30,10 +30,8 @@ app.post("/", function (req, res) {
         res.send("error occured");
       } else {
 
-          var callMe = require("./public/js/callMe");
-          var url = "http://localhost/receipts/new-receipt-2.pdf";
-
-          callMe();
+         const myModule = require("./public/js/callMe.js");
+      
 
        res.redirect("../dataValidationPage.html");
         

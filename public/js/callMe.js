@@ -7,10 +7,12 @@ const client = new FormRecognizerClient(endpoint, new AzureKeyCredential(apiKey)
 const path = "../ElancoFrontend/public/receipts/new-receipt-2.pdf"
 const readStream = fs.createReadStream(path);
 
-var extractedData;
 
 async function recognizeCustom() {
     // Model ID from when you trained your model.
+
+    var extractedData;
+
     const modelId = "b131c408-ad86-424b-aa01-388b98a48d9d";
 
     const formUrl = "https://raw.githubusercontent.com/Elanco-Group/ProtoReceiptFunctionality/master/receipt.pdf";
@@ -33,28 +35,43 @@ async function recognizeCustom() {
         //             console.log(`cell (${cell.rowIndex},${cell.columnIndex}) ${cell.text}`);
         //         }
         //     }
-        // }
+        //
 
         console.log("Fields:");
         for (const fieldName in form.fields) {
             // each field is of type FormField
             const field = form.fields[fieldName];
 
-            extractedData += `Field ${fieldName} has value '${field.value}' with a confidence score of ${field.confidence}`;
-            // console.log(
-            //     `Field ${fieldName} has value '${field.value}' with a confidence score of ${field.confidence}`
-            // );
+           extractedData = `Field ${fieldName} has value '${field.value}' with a confidence score of ${field.confidence}`;
+            console.log(
+                `Field ${fieldName} has value '${field.value}' with a confidence score of ${field.confidence}`
+            );
         }
+
     }
 
-    console.log(extractedData);
 
+testFunction(extractedData);
 }
+
 
 recognizeCustom().catch((err) => {
     console.error("The sample encountered an error:", err);
 });
 
-   module.exports = function() {
 
+function testFunction(props)
+{
+    var x = props;
+      //console.log(x +  " // FROM HERE");
+        return x;
 }
+
+
+module.exports = {
+ 
+ testFunction:testFunction()
+}
+
+
+
