@@ -30,7 +30,12 @@ app.post("/", function (req, res) {
         res.send("error occured");
       } else {
 
-       res.redirect("../userDash.html");
+          var callMe = require("./public/js/callMe");
+          var url = "http://localhost/receipts/new-receipt-2.pdf";
+
+          callMe();
+
+       res.redirect("../dataValidationPage.html");
         
       }
     });
