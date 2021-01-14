@@ -29,7 +29,7 @@ app.use('/images', express.static(__dirname + '/public/Images'));
             var file = req.files.imgPath,
             filename = file.name;
 
-            file.mv("../ElancoFrontend/public/Images/"+filename, function(err)
+            file.mv("../ElancoFrontend/public/receipts/"+filename, function(err)
             {
                 if(err)
                 {
