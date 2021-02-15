@@ -8,12 +8,11 @@ const path = "../ElancoFrontend/public/receipts/worseExample1.jpg"
 const readStream = fs.createReadStream(path);
  
 // ADDED ------------------------------------------------------------------------------------
-const mongoose = require('mongoose')
-const url = 'mongodb+srv://ElancoGroupA:iVFPv7X5YGxP2mWN@elancoreceipts.4adsq.mongodb.net/<dbname>?retryWrites=true&w=majority';
-var bodyParser = require('body-parser');
 
-var express = require("express"),
-  app = express();
+//const mongoose = require('mongoose')
+//const url = 'mongodb+srv://ElancoGroupA:iVFPv7X5YGxP2mWN@elancoreceipts.4adsq.mongodb.net/ElancoReceipts?retryWrites=true&w=majority';
+//var bodyParser = require('body-parser');
+
 
 //app.use(bodyParser());
 
@@ -72,16 +71,28 @@ async function recognizeCustom() {
             } 
             if (temp == "clinic address")
             {
-                clinicName = field.value;
-                console.log("Extracted = "+clinicName);
+                clinicAddress = field.value;
+                console.log("Extracted = "+clinicAddress);
             } 
               if (temp == "invoice date")
             {
                 invoiceDate = field.value;
                 console.log("Extracted = "+invoiceDate);
             }
+            if (temp == "patient name")
+            {
+                patient = field.value;
+                console.log("Extracted = " + patient);
+            }
 
-           extractedData = `Field ${fieldName} has value '${field.value}' with a confidence score of ${field.confidence}`;
+            if(temp == "items" || temp == "item-names")
+            {
+                items.push(field.value);
+                console.log ("Extracted = " + items);
+            }
+     
+
+           // extractedData = `Field ${fieldName} has value '${field.value}' with a confidence score of ${field.confidence}`;
             console.log(
                 `Field ${fieldName} has value '${field.value}' with a confidence score of ${field.confidence}`
             );
@@ -89,6 +100,24 @@ async function recognizeCustom() {
 
     }
 
+
+const newData = new rebateData ({
+
+    clinicName: clinicName,
+    clinicAddress: clinicAddress,
+    invoiceDate: invoiceDate,
+    patient: patient,
+    items:items,
+
+})
+
+
+newData.save(function (error,document){
+ if (error) console.error(error)
+
+ console.log(document);
+
+})
 
 testFunction(extractedData);
 }

@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const rebateSchema = new Schema({
 
-   /* user:{
-        type: Schema.types.ObjectID, ref: 'user'
-    },*/
+    user:{
+        type: Schema.Types.ObjectID, ref: 'user'
+    },
     clinicName:{
         type: String,
         required: true
@@ -14,13 +14,13 @@ const rebateSchema = new Schema({
         type: String
     },
     invoiceDate:{
-        type: Date,
+        type: String,
         required: true
     },
-   /* patient:{
-        type: Schema.types.ObjectID, ref: 'patient'
+    patient:{
+        type: String
     },
-    items:[{type: Schema.types.ObjectID, ref: 'products'}]*/
+    items:[{type: String}]
  
 })
 
