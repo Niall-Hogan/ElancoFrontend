@@ -9,14 +9,7 @@ const mongoose = require('mongoose')
 const url = 'mongodb+srv://ElancoGroupA:iVFPv7X5YGxP2mWN@elancoreceipts.4adsq.mongodb.net/ElancoReceipts?retryWrites=true&w=majority';
 
 // require ejs
-
 const ejs = require('ejs');
-
-/*// for parsing form data 
-var bodyParser = require('body-parser');
-app.use(bodyParser());*/
-
-app.set('view engine','ejs');
 
 // mongoose connection to atlas db ----------------
 mongoose.connect(url, { useNewUrlParser:true});
@@ -31,51 +24,39 @@ db.on('error', err => {
 })
 // ------------------------------------------------
 
-// middleware for uploading files
-upload = require("express-fileupload");
-app.use(upload());
 
 console.log("Server started ");
 
+// middleware for uploading files
+upload = require("express-fileupload");
+app.use(upload());
 // middleware to serve css, js and images
 app.use(express.static(__dirname + '/public'));
 
-/*
-app.use("/css", express.static(__dirname + "/public/css"));
-app.use("/js", express.static(__dirname + "/public/js"));
-app.use("/images", express.static(__dirname + "/public/Images"));
-*/
-app.use("/views", express.static('/public/views'));
 
-// Get request serves a html page back to the browser
-
-
-app.post("/", function (req, res) {
+// Post request from addRecs
+app.post("/", async function (req, res) {
  
-
+  // if the file is found, save it to the reciepts folder
   if (req.files) {
     var file = req.files.imgPath,
       filename = file.name;
     var fullFilepath = "../ElancoFrontend/public/receipts/" + filename;
 
-    file.mv(fullFilepath, function (err) {
+    file.mv(fullFilepath, async function (err) {
       if (err) {
         console.log(err);
         res.send("error occured");
       } else {
 
-       const myModule = require("./public/js/callMe.js");
+       const testFunction = require("./callMe");
+       
+       // result holds object that is returned from callMe test function
+       const result = await testFunction()
 
-            app.get("/",(req, res) => {
-
-              res.render('index.ejs', {
-                clinicName: clinicName,
-
-              });
-
-
-            });
-       //res.redirect("../ElancoFrontend/public/views/index.ejs");
+        // renders (redirects) to the data validation page, passing the result object 
+       res.render('index.ejs', result );
+ 
         
       }
     });
