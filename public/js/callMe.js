@@ -4,9 +4,30 @@ const endpoint = "https://gsdp-formrecog.cognitiveservices.azure.com/";
 const apiKey = "0176c0aa83a0451ea4aa8c0ae6845aa3";
 const trainingClient = new FormTrainingClient(endpoint, new AzureKeyCredential(apiKey));
 const client = new FormRecognizerClient(endpoint, new AzureKeyCredential(apiKey));
-const path = "../ElancoFrontend/public/receipts/new-receipt-2.pdf"
+const path = "../ElancoFrontend/public/receipts/worseExample1.jpg"
 const readStream = fs.createReadStream(path);
+ 
+// ADDED ------------------------------------------------------------------------------------
+const mongoose = require('mongoose')
+const url = 'mongodb+srv://ElancoGroupA:iVFPv7X5YGxP2mWN@elancoreceipts.4adsq.mongodb.net/<dbname>?retryWrites=true&w=majority';
+var bodyParser = require('body-parser');
 
+var express = require("express"),
+  app = express();
+
+//app.use(bodyParser());
+
+
+var user;
+var clinicName;
+var clinicAddress;
+var invoiceDate;
+var patient;
+var items = [];
+
+const rebateData = require("../models/rebate.js");
+
+// ADDED ------------------------------------------------------------------------------------
 
 async function recognizeCustom() {
     // Model ID from when you trained your model.
@@ -41,6 +62,24 @@ async function recognizeCustom() {
         for (const fieldName in form.fields) {
             // each field is of type FormField
             const field = form.fields[fieldName];
+
+            let temp = fieldName;
+
+            if (temp == "clinic name")
+            {
+                clinicName = field.value;
+                console.log("Extracted = "+clinicName);
+            } 
+            if (temp == "clinic address")
+            {
+                clinicName = field.value;
+                console.log("Extracted = "+clinicName);
+            } 
+              if (temp == "invoice date")
+            {
+                invoiceDate = field.value;
+                console.log("Extracted = "+invoiceDate);
+            }
 
            extractedData = `Field ${fieldName} has value '${field.value}' with a confidence score of ${field.confidence}`;
             console.log(
