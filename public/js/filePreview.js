@@ -29,5 +29,7 @@ document.querySelector("#back").addEventListener("click", function(ev)
 document.querySelector("#subRec").addEventListener("click", function(ev)
 {
     console.log("WORKS");
-    location.href = "../userDash.html";
+    document.getElementsByClassName('loader')[0].style.display = "inline";
+     document.getElementsByClassName('loginCont')[0].style.opacity = "0.5";
+
 })

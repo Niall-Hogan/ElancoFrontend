@@ -40,7 +40,6 @@ async function recognizeCustom() {
     for (const form of forms || []) {
         console.log(`${form.formType}, page range: ${form.pageRange}`);
 
-
         console.log("Fields:");
         for (const fieldName in form.fields) {
             // each field is of type FormField
