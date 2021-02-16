@@ -106,6 +106,9 @@ async function testFunction()
     
     console.log(document);
     
+        items = [];
+        console.log(items);
+
     })
 
 // variables for exported function to return

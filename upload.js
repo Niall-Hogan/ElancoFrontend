@@ -24,7 +24,6 @@ db.on('error', err => {
 })
 // ------------------------------------------------
 
-
 console.log("Server started ");
 
 // middleware for uploading files
@@ -55,7 +54,7 @@ app.post("/", async function (req, res) {
        const result = await testFunction()
 
         // renders (redirects) to the data validation page, passing the result object 
-       res.render('index.ejs', result );
+       res.render('dataValidationPage.ejs', result );
  
         
       }
